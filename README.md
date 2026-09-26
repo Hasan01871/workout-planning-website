@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏋️ FitLog — Workout Library
 
-## Getting Started
+FitLog is a dark, no-nonsense gym companion web app where users can browse a library of workouts, view detailed exercise instructions, build a daily workout plan, and save exercises for later — all with data that persists across page reloads.
 
-First, run the development server:
+## 🛠️ Technologies Used
 
-```bash
+- Next.js (App Router) — page routing and rendering
+- React — UI components and state management
+- TypeScript — type safety across components and data
+- Tailwind CSS — styling and responsive layout
+- Context API — global state for plan/saved workouts
+- localStorage — persisting user's plan and saved list across reloads
+- FitLog REST API — fetching workout data (https://api.abcz.workers.dev/api/fitlog)
+
+## ✨ Key Features
+
+1. Workout Library — Browse all 12 workouts in a responsive 3-column grid, each showing image, category tags, equipment, duration, calories, and rating.
+2. Workout Detail Page — Dynamic route (/exercise/[id]) showing full workout info: equipment, difficulty, sets, reps, duration, calories, rating, and step-by-step instructions.
+3. Today's Plan & Saved List — Add any workout to "Today's Plan" (capped at 5 lifts) or "Save for later," with live badge counters in the navbar.
+4. My Plan Page — Tabbed view (Today's Plan / Saved) with a live-updating stats summary (exercises, minutes, calories), a Sort By dropdown (Duration / Calories / Rating), Mark as Done and Remove actions, and a friendly empty state.
+5. Persistent Data + Toast Notifications — Plan and saved data are stored in localStorage so they survive page reloads, with toast notifications confirming every add/remove/done action.
+
+## 📄 Pages
+
+| Route              | Description                          |
+|---------------------|---------------------------------------|
+| /                  | Home page — Hero + Workout Library    |
+| /exercise/[id]     | Workout detail page                   |
+| /my-plan           | Today's Plan & Saved workouts         |
+| * (unknown route)  | Custom 404 page                       |
+
+## 🚀 Getting Started
+
+bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
